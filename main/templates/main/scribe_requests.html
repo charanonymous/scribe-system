@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scribe Requests</title>
+</head>
+<body>
+    <h1>Scribe Requests</h1>
+
+    {% if scribe_requests %}
+        {% for request in scribe_requests %}
+            <div class="card">
+                <p><strong>Full Name:</strong> {{ request.full_name }}</p>
+                <p><strong>Languages:</strong> {{ request.languages }}</p>
+                <p><strong>Exam Name:</strong> {{ request.exam_name }}</p>
+                <p><strong>Course:</strong> {{ request.course }}</p>
+                <p><strong>Subject:</strong> {{ request.subject }}</p>
+                <p><strong>Exam Center:</strong> {{ request.exam_center }}</p>
+                <p><strong>Exam Date:</strong> {{ request.exam_date }}</p>
+                <button>Accept</button>
+                <button>Reject</button>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No scribe requests available.</p>
+    {% endif %}
+</body>
+</html>
